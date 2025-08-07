@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="SymbolData" load_steps=2 format=3]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cdrftcxkfgn8h"]
 
-[ext_resource type="Script" path="res://SymbolData.gd" id="1_wheat"]
+[ext_resource type="Script" uid="uid://8dmoodsiqbxe" path="res://SymbolData.gd" id="1_wheat"]
+[ext_resource type="Texture2D" uid="uid://cfbc7v7tvkj8t" path="res://resources/symbols/sprites/c5e259b5-b39b-4d98-8e66-cda3de45a921.png" id="2_v4eoa"]
 
 [resource]
 script = ExtResource("1_wheat")
 symbol_id = 2
 symbol_name = "Wheat"
 rarity = 0
-texture = null
+texture = ExtResource("2_v4eoa")
 description = "A staple crop that provides sustenance."

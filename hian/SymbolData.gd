@@ -1,4 +1,5 @@
 # SymbolData.gd
+class_name SymbolData
 extends Resource
 
 # 심볼의 등급을 정의하는 Enum (열거형)

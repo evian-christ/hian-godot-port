@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="hian"
+run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
-run/main_scene="res://Game.tscn"
 
 [autoload]
 

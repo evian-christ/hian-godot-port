@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="SymbolData" load_steps=2 format=3]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://djm214t26hnuy"]
 
-[ext_resource type="Script" path="res://SymbolData.gd" id="1_fruit"]
+[ext_resource type="Script" uid="uid://8dmoodsiqbxe" path="res://SymbolData.gd" id="1_fruit"]
+[ext_resource type="Texture2D" uid="uid://duat8x4khy3qp" path="res://resources/symbols/sprites/d2a3db48-c0bf-419f-80a4-50004de95f30.png" id="2_hbbco"]
 
 [resource]
 script = ExtResource("1_fruit")
 symbol_id = 1
 symbol_name = "Fruits"
 rarity = 0
-texture = null
+texture = ExtResource("2_hbbco")
 description = "A basic source of food."
