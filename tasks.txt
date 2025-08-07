@@ -21,7 +21,9 @@ This document summarizes the key features and changes implemented in the Godot p
 - **Symbol Data Structure:** Defined a `SymbolData` custom resource (`SymbolData.gd`) with properties like `symbol_id`, `symbol_name`, `rarity`, `texture`, and `description`.
 - **Initial Symbol Resources:** Created three test symbol resources (`fruits.tres`, `wheat.tres`, `cow.tres`) based on `SymbolData`.
 - **Dynamic Symbol Placement:** Implemented functionality to randomly place the initial set of symbols (fruits, wheat, cow) onto the game board at the start of the game or when the "Spin" button is pressed.
+- **Symbol Selection with Rarity:** Implemented logic to generate three random symbol choices based on defined rarity probabilities for each turn.
+- **UI for Symbol Selection:** Integrated the generated symbol choices into the UI, displaying their textures and names on the "Select" buttons.
 - **Slot Visuals:** Configured `Slot.tscn` to display the `texture` of the `SymbolData` assigned to it.
 
 ## 4. Technical Refinements
-- **Type Hinting & `class_name`:** Addressed and resolved Godot 4's strict type-hinting issues by correctly using `class_name` for `SymbolData` and updating type hints in `GameManager.gd`, `Game.gd`, and `Slot.gd`.
+- **Type Hinting & `class_name`:** Addressed and resolved Godot 4's strict type-hinting issues by correctly using `class_name` for `SymbolData` and updating type hints in `GameManager.gd`, `Game.gd`, and `Slot.gd`. Also resolved `class_name` hiding autoload singleton issue.
