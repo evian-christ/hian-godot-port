@@ -33,18 +33,21 @@ func _on_spin_button_pressed():
 func _on_select_button_1_pressed():
 	print("Select Button 1 Pressed")
 	symbol_selected.emit(current_selection_symbols[0])
+	GameManager.add_symbol_to_player_pool(current_selection_symbols[0])
 	set_select_buttons_disabled(true)
 	spin_button.disabled = false
 
 func _on_select_button_2_pressed():
 	print("Select Button 2 Pressed")
 	symbol_selected.emit(current_selection_symbols[1])
+	GameManager.add_symbol_to_player_pool(current_selection_symbols[1])
 	set_select_buttons_disabled(true)
 	spin_button.disabled = false
 
 func _on_select_button_3_pressed():
 	print("Select Button 3 Pressed")
 	symbol_selected.emit(current_selection_symbols[2])
+	GameManager.add_symbol_to_player_pool(current_selection_symbols[2])
 	set_select_buttons_disabled(true)
 	spin_button.disabled = false
 

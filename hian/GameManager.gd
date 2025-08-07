@@ -9,6 +9,9 @@ var initial_symbols: Array[SymbolData] = [
 	preload("res://resources/symbols/cow.tres"),
 ]
 
+# 플레이어가 현재 소유한 모든 심볼
+var player_owned_symbols: Array[SymbolData] = []
+
 # 모든 심볼을 희귀도별로 저장할 딕셔너리
 var all_symbols_by_rarity: Dictionary = {}
 
@@ -23,6 +26,12 @@ var current_rarity_probabilities: Dictionary = {
 
 func _ready():
 	_load_all_symbols()
+	# 게임 시작 시 초기 심볼을 플레이어 소유 풀에 추가
+	player_owned_symbols.append_array(initial_symbols)
+
+func add_symbol_to_player_pool(symbol_data: SymbolData):
+	player_owned_symbols.append(symbol_data)
+	print("Added ", symbol_data.symbol_name, " to player's pool. Total owned: ", player_owned_symbols.size())
 
 func _load_all_symbols():
 	# 모든 희귀도 키 초기화

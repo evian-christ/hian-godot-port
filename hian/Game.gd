@@ -10,7 +10,7 @@ const BOARD_HEIGHT = 4
 
 func _ready():
 	generate_board()
-	place_symbols(GameManager.initial_symbols)
+	place_symbols(GameManager.player_owned_symbols)
 	ui.spin_requested.connect(_on_ui_spin_requested)
 
 func generate_board():
@@ -34,4 +34,4 @@ func place_symbols(symbols_to_place: Array[SymbolData]): # 인자 타입 변경
 func _on_ui_spin_requested():
 	GameManager.turn += 1
 	clear_board()
-	place_symbols(GameManager.initial_symbols)
+	place_symbols(GameManager.player_owned_symbols)
