@@ -3,6 +3,6 @@
 [ext_resource type="Script" path="res://Slot.gd" id="1_v4y7m"]
 
 [node name="Slot" type="ColorRect"]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(96, 96)
 color = Color(0.215686, 0.215686, 0.215686, 1)
 script = ExtResource("1_v4y7m")
