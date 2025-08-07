@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2g0m6g3g8v8x"]
+
+[ext_resource type="Script" path="res://Slot.gd" id="1_v4y7m"]
+
+[node name="Slot" type="ColorRect"]
+custom_minimum_size = Vector2(128, 128)
+color = Color(0.215686, 0.215686, 0.215686, 1)
+script = ExtResource("1_v4y7m")
