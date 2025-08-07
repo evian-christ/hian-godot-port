@@ -30,6 +30,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "Turn: 0"
 
+[node name="FoodLabel" type="Label" parent="MarginContainer/VBoxContainer/TopRow"]
+layout_mode = 2
+text = "Food: 0"
+
 [node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -46,7 +50,7 @@ size_flags_horizontal = 3
 [node name="SelectButton1" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
-text = "Select 1"
+text = ""
 disabled = true
 
 [node name="TextureRect1" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomRow/SelectButton1"]
@@ -62,7 +66,7 @@ stretch_mode = 4
 [node name="SelectButton2" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
-text = "Select 2"
+text = ""
 disabled = true
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomRow/SelectButton2"]

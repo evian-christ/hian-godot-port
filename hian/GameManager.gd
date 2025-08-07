@@ -1,6 +1,7 @@
 extends Node
 
 var turn = 0
+var total_food = 0
 
 # 플레이어가 소유한 초기 심볼 목록 (테스트용)
 var initial_symbols: Array[SymbolData] = [

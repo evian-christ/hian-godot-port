@@ -4,6 +4,7 @@ signal spin_requested
 signal symbol_selected(symbol_data)
 
 @onready var turn_label = $MarginContainer/VBoxContainer/TopRow/TurnLabel
+@onready var food_label = $MarginContainer/VBoxContainer/TopRow/FoodLabel
 @onready var select_button_1 = $MarginContainer/VBoxContainer/BottomRow/SelectButton1
 @onready var select_button_2 = $MarginContainer/VBoxContainer/BottomRow/SelectButton2
 @onready var select_button_3 = $MarginContainer/VBoxContainer/BottomRow/SelectButton3
@@ -20,6 +21,7 @@ func _ready():
 
 func _process(delta):
 	turn_label.text = "Turn: " + str(GameManager.turn)
+	food_label.text = "Food: " + str(GameManager.total_food)
 
 func _on_spin_button_pressed():
 	spin_requested.emit()

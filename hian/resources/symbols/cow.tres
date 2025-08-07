@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bb3jhbf2gm3fv"]
+[gd_resource type="Resource" script_class="SymbolData" load_steps=3 format=3 uid="uid://bb3jhbf2gm3fv"]
 
 [ext_resource type="Script" uid="uid://8dmoodsiqbxe" path="res://SymbolData.gd" id="1_cow"]
 [ext_resource type="Texture2D" uid="uid://dex0i1i3c5eb3" path="res://resources/symbols/sprites/7067e39f-a159-4850-b384-ca5110e55ff3.png" id="2_hwsg0"]
@@ -9,4 +9,5 @@ symbol_id = 3
 symbol_name = "Cow"
 rarity = 1
 texture = ExtResource("2_hwsg0")
+base_food = 3
 description = "Provides a good amount of food and can be a source of other resources."

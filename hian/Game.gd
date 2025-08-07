@@ -26,10 +26,12 @@ func place_symbols(symbols_to_place: Array[SymbolData]): # 인자 타입 변경
 	var available_slots = game_board.get_children()
 	available_slots.shuffle()
 
+	var placed_symbols: Array[SymbolData] = []
 	for i in range(min(symbols_to_place.size(), available_slots.size())):
 		var symbol_data = symbols_to_place[i]
 		var target_slot = available_slots[i]
 		target_slot.set_symbol(symbol_data)
+		placed_symbols.append(symbol_data)
 
 func _on_ui_spin_requested():
 	GameManager.turn += 1
