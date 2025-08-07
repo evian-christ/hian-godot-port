@@ -13,7 +13,7 @@ config_version=5
 config/name="hian"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://Game.tscn"
 
 [rendering]
 
