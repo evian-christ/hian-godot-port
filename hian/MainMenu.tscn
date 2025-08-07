@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6v8nyle8b4a"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_tqd2d"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqd2d")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer"]
+layout_mode = 2
+text = "Play"
+
+[connection signal="pressed" from="CenterContainer/PlayButton" to="." method="_on_play_button_pressed"]
