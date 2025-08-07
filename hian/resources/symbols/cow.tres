@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SymbolData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://SymbolData.gd" id="1_cow"]
+
+[resource]
+script = ExtResource("1_cow")
+symbol_id = 3
+symbol_name = "Cow"
+rarity = 1
+texture = null
+description = "Provides a good amount of food and can be a source of other resources."

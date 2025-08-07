@@ -1,9 +1,15 @@
 extends ColorRect
 
-# 나중에 이 스크립트는 다음과 같은 것들을 처리합니다:
-# - 슬롯에 배치된 심볼 데이터 저장
-# - 마우스 클릭 또는 드래그 앤 드롭 이벤트 처리
-# - 상태에 따른 외형 변경 (예: 하이라이트)
+@onready var symbol_texture = $SymbolTexture
+
+var current_symbol = null
 
 func _ready():
 	pass
+
+func set_symbol(symbol_data):
+	current_symbol = symbol_data
+	if symbol_data:
+		symbol_texture.texture = symbol_data.texture
+	else:
+		symbol_texture.texture = null

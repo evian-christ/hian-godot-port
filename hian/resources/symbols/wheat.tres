@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SymbolData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://SymbolData.gd" id="1_wheat"]
+
+[resource]
+script = ExtResource("1_wheat")
+symbol_id = 2
+symbol_name = "Wheat"
+rarity = 0
+texture = null
+description = "A staple crop that provides sustenance."
