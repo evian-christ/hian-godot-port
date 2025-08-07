@@ -34,10 +34,40 @@ text = "Turn: 0"
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="BottomRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="BottomSpacer" type="Control" parent="MarginContainer/VBoxContainer/BottomRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SelectButton1" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+text = "Select 1"
+disabled = true
+
+[node name="SelectButton2" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+text = "Select 2"
+disabled = true
+
+[node name="SelectButton3" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+text = "Select 3"
+disabled = true
+
 [node name="SpinButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Spin"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BottomRow/SelectButton1" to="." method="_on_select_button_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BottomRow/SelectButton2" to="." method="_on_select_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BottomRow/SelectButton3" to="." method="_on_select_button_3_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]
