@@ -49,17 +49,47 @@ layout_mode = 2
 text = "Select 1"
 disabled = true
 
+[node name="TextureRect1" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomRow/SelectButton1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
 [node name="SelectButton2" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
 text = "Select 2"
 disabled = true
 
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomRow/SelectButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+
 [node name="SelectButton3" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
 text = "Select 3"
 disabled = true
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomRow/SelectButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
 
 [node name="SpinButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 100)
