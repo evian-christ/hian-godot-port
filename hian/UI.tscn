@@ -78,7 +78,7 @@ stretch_mode = 4
 [node name="SelectButton3" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
 custom_minimum_size = Vector2(150, 75)
 layout_mode = 2
-text = "Select 3"
+text = ""
 disabled = true
 
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomRow/SelectButton3"]

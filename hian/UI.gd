@@ -60,8 +60,8 @@ func _update_select_buttons():
 	for i in range(3):
 		var symbol = current_selection_symbols[i]
 		if symbol:
-			buttons[i].text = symbol.symbol_name
+			buttons[i].text = ""
 			textures[i].texture = symbol.texture
 		else:
-			buttons[i].text = "(Empty)"
+			buttons[i].text = ""
 			textures[i].texture = null
