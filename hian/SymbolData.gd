@@ -2,12 +2,12 @@
 class_name SymbolData
 extends Resource
 
-# 심볼의 등급을 정의하는 Enum (열거형)
-enum Rarity { COMMON, UNCOMMON, RARE, EPIC, LEGENDARY }
+@export var id: String = ""
+@export_range(0, 10) var level: int = 0
 
-@export var symbol_id: int = 0
-@export var symbol_name: String = ""
-@export var rarity: Rarity = Rarity.COMMON
+# 심볼의 타입을 정의하는 플래그 (여러 개 선택 가능)
+@export_flags("Terrain", "Food")
+var types: int = 0
 @export var texture: Texture2D
 @export var base_food: int = 0
 
