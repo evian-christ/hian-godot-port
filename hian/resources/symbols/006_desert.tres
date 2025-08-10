@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SymbolData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="SymbolData" load_steps=3 format=3 uid="uid://1f46vpo2it88"]
 
-[ext_resource type="Script" path="res://SymbolData.gd" id="1_symbol_data"]
+[ext_resource type="Script" uid="uid://8dmoodsiqbxe" path="res://SymbolData.gd" id="1_symbol_data"]
+[ext_resource type="Texture2D" uid="uid://ckboxde5751li" path="res://resources/symbols/sprites/006.png" id="2_y78kl"]
 
 [resource]
 script = ExtResource("1_symbol_data")
@@ -8,5 +9,5 @@ id = 6
 name = "Desert"
 level = 0
 types = 1
-texture = null
+texture = ExtResource("2_y78kl")
 description = ""

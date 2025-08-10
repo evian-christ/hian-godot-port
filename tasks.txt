@@ -1,29 +1,14 @@
-# Project Development Log (hian-godot-port)
-
-This document summarizes the key features and changes implemented in the Godot project.
-
-## 1. Project Setup & Initial Analysis
-- **GameMaker Project Analysis:** Performed an initial analysis of the "GM2 Humankind in a nutshell" GameMaker Studio 2 project to understand its core mechanics (resource management, turn-based, card system, combat, historical theme).
-- **Git Repository Initialization:** Initialized a Git repository and connected it to a remote GitHub repository (`https://github.com/evian-christ/hian-godot-port.git`).
-- **GameMaker Project Summary:** Saved the GameMaker project analysis summary to `gm2.txt`.
-- **Godot Project Development Plan:** Created `gemini.md` outlining the high-level development plan for the Godot port.
-
-## 2. Godot Core Structure & UI
-- **Godot Project Creation:** Created a new Godot project within the `hian` directory.
-- **Main Menu & Game Scene:** Implemented a basic main menu (`MainMenu.tscn`) with a "Play" button that transitions to the game screen (`Game.tscn`).
-- **Development Mode Main Scene:** Configured `project.godot` to directly load `Game.tscn` for development convenience.
-- **5x4 Game Board:** Implemented a 5x4 grid-based game board using `GridContainer` and dynamically generated `Slot.tscn` instances.
-- **Turn System:** Introduced a global turn counter managed by a `GameManager` autoload singleton.
-- **UI Elements:** Added a UI layer (`UI.tscn`) to display the current turn count (top-right) and a "Spin" button (bottom-left).
-- **Button Enable/Disable Logic:** Implemented logic to control the enabled state of "Spin" and "Select" buttons based on game flow (Spin button disables after press, re-enables after a Select button is pressed; Select buttons enable after Spin, disable after one is pressed).
-
-## 3. Symbol System (Data & Placement)
-- **Symbol Data Structure:** Defined a `SymbolData` custom resource (`SymbolData.gd`) with properties like `symbol_id`, `symbol_name`, `rarity`, `texture`, and `description`.
-- **Initial Symbol Resources:** Created three test symbol resources (`fruits.tres`, `wheat.tres`, `cow.tres`) based on `SymbolData`.
-- **Dynamic Symbol Placement:** Implemented functionality to randomly place the initial set of symbols (fruits, wheat, cow) onto the game board at the start of the game or when the "Spin" button is pressed.
-- **Symbol Selection with Rarity:** Implemented logic to generate three random symbol choices based on defined rarity probabilities for each turn.
-- **UI for Symbol Selection:** Integrated the generated symbol choices into the UI, displaying their textures and names on the "Select" buttons.
-- **Slot Visuals:** Configured `Slot.tscn` to display the `texture` of the `SymbolData` assigned to it.
-
-## 4. Technical Refinements
-- **Type Hinting & `class_name`:** Addressed and resolved Godot 4's strict type-hinting issues by correctly using `class_name` for `SymbolData` and updating type hints in `GameManager.gd`, `Game.gd`, and `Slot.gd`. Also resolved `class_name` hiding autoload singleton issue.
+[x] SymbolData.gd 커스텀 리소스 정의
+[x] Game.tscn에 GameBoard(GridContainer) 및 UI(CanvasLayer) 추가
+[x] Slot.tscn 및 Slot.gd 생성
+[x] GameManager.gd 싱글톤 생성 및 초기 변수 설정
+[x] Game.gd에서 GameBoard에 Slot 동적 생성
+[x] UI.tscn에 식량 표시 Label 추가 및 UI.gd에서 업데이트 함수 구현
+[x] SymbolData 리소스 기반 8개 지형 심볼(.tres) 생성 및 파일명 ID 정렬
+[x] SymbolData.gd 속성 리팩토링 (id, name, level, types, base_food 제거)
+[x] 게임 시작 시 초기 심볼 설정 (River, Grassland)
+[x] Slot.tscn Label 노드 누락 오류 수정
+[x] 스핀 시 심볼 선택 기능 재구현
+[x] 프로젝트 문서 (documentation.html) 생성
+[ ] 핸드(Hand) UI 및 기능 구현
+[ ] 드래그 앤 드롭으로 Hand의 심볼을 GameBoard의 Slot에 배치

@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="SymbolData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="SymbolData" load_steps=3 format=3 uid="uid://cst8g17vgblpw"]
 
-[ext_resource type="Script" path="res://SymbolData.gd" id="1_symbol_data"]
+[ext_resource type="Script" uid="uid://8dmoodsiqbxe" path="res://SymbolData.gd" id="1_symbol_data"]
+[ext_resource type="Texture2D" uid="uid://bekiux4xl0dxx" path="res://resources/symbols/sprites/005.png" id="2_digbd"]
 
 [resource]
 script = ExtResource("1_symbol_data")
@@ -8,5 +9,5 @@ id = 5
 name = "Coast"
 level = 0
 types = 1
-texture = null
+texture = ExtResource("2_digbd")
 description = ""
