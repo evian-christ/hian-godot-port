@@ -95,6 +95,11 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 4
 
+[node name="SkipButton" type="Button" parent="MarginContainer/VBoxContainer/BottomRow"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Skip"
+
 [node name="SpinButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
@@ -104,4 +109,5 @@ text = "Spin"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BottomRow/SelectButton1" to="." method="_on_select_button_1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BottomRow/SelectButton2" to="." method="_on_select_button_2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BottomRow/SelectButton3" to="." method="_on_select_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BottomRow/SkipButton" to="." method="_on_skip_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SpinButton" to="." method="_on_spin_button_pressed"]

@@ -8,6 +8,7 @@ signal symbol_selected(symbol_data)
 @onready var select_button_1 = $MarginContainer/VBoxContainer/BottomRow/SelectButton1
 @onready var select_button_2 = $MarginContainer/VBoxContainer/BottomRow/SelectButton2
 @onready var select_button_3 = $MarginContainer/VBoxContainer/BottomRow/SelectButton3
+@onready var skip_button = $MarginContainer/VBoxContainer/BottomRow/SkipButton
 @onready var spin_button = $MarginContainer/VBoxContainer/SpinButton
 
 @onready var texture_rect_1 = $MarginContainer/VBoxContainer/BottomRow/SelectButton1/TextureRect1
@@ -53,10 +54,16 @@ func _on_select_button_3_pressed():
 	set_select_buttons_disabled(true)
 	spin_button.disabled = false
 
+func _on_skip_button_pressed():
+	print("Skip Button Pressed")
+	set_select_buttons_disabled(true)
+	spin_button.disabled = false
+
 func set_select_buttons_disabled(disabled: bool):
 	select_button_1.disabled = disabled
 	select_button_2.disabled = disabled
 	select_button_3.disabled = disabled
+	skip_button.disabled = disabled
 
 func _update_select_buttons():
 	var buttons = [select_button_1, select_button_2, select_button_3]
