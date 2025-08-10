@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Effect" load_steps=2 format=3 uid="uid://d2ore4yny5tcs"]
+
+[ext_resource type="Script" path="res://Effect.gd" id="1_effect"]
+
+[resource]
+script = ExtResource("1_effect")
+trigger = "on_turn_end"
+conditions = Array[Dictionary]([{
+"for_each": true,
+"symbol_name": "Woods",
+"type": "nearby"
+}])
+actions = Array[Dictionary]([{
+"amount": 1,
+"resource": "food",
+"type": "produce"
+}])

@@ -4,6 +4,7 @@ extends ColorRect
 
 var current_symbol: SymbolData = null
 var is_empty: bool = true
+var board_position: Vector2i
 
 func _ready():
 	pass

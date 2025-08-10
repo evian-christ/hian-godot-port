@@ -2,6 +2,7 @@ extends Node
 
 var turn = 0
 var total_food = 0
+var current_turn_food_production = 0
 
 # 플레이어가 소유한 초기 심볼 목록
 var initial_symbols: Array[SymbolData] = [
@@ -32,6 +33,7 @@ func get_all_symbols() -> Array[SymbolData]:
 				var path = "res://resources/symbols/" + file_name
 				var symbol_data = load(path) as SymbolData
 				if symbol_data:
+					print("Loaded symbol: ", symbol_data.name)
 					all_symbols.append(symbol_data)
 			file_name = dir.get_next()
 	else:

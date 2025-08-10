@@ -11,12 +11,13 @@ const BOARD_HEIGHT = 4
 func _ready():
 	generate_board()
 	place_symbols(GameManager.player_owned_symbols)
-	calculate_food_production()
+	calculate_production()
 	ui.spin_requested.connect(_on_ui_spin_requested)
 
 func generate_board():
 	for i in range(BOARD_WIDTH * BOARD_HEIGHT):
 		var new_slot = SLOT_SCENE.instantiate()
+		new_slot.board_position = Vector2i(i % BOARD_WIDTH, i / BOARD_WIDTH)
 		game_board.add_child(new_slot)
 
 func clear_board():
@@ -32,36 +33,45 @@ func place_symbols(symbols_to_place: Array[SymbolData]):
 		var target_slot = available_slots[i]
 		target_slot.set_symbol(symbol_data)
 
-func calculate_food_production():
+func calculate_production():
+	GameManager.current_turn_food_production = 0
+
 	var slots = game_board.get_children()
-	for i in range(slots.size()):
-		var slot = slots[i]
-		if slot.current_symbol and slot.current_symbol.name == "Wild berries":
-			GameManager.total_food += 1 # Base production
-			
-			# Synergy with Woods
-			var x = i % BOARD_WIDTH
-			var y = i / BOARD_WIDTH
-			
-			var neighbor_indices = []
-			# Cardinal directions
-			if x > 0: neighbor_indices.append(i - 1)
-			if x < BOARD_WIDTH - 1: neighbor_indices.append(i + 1)
-			if y > 0: neighbor_indices.append(i - BOARD_WIDTH)
-			if y < BOARD_HEIGHT - 1: neighbor_indices.append(i + BOARD_WIDTH)
-			# Diagonal directions
-			if x > 0 and y > 0: neighbor_indices.append(i - BOARD_WIDTH - 1)
-			if x < BOARD_WIDTH - 1 and y > 0: neighbor_indices.append(i - BOARD_WIDTH + 1)
-			if x > 0 and y < BOARD_HEIGHT - 1: neighbor_indices.append(i + BOARD_WIDTH - 1)
-			if x < BOARD_WIDTH - 1 and y < BOARD_HEIGHT - 1: neighbor_indices.append(i + BOARD_WIDTH + 1)
-			
-			for neighbor_index in neighbor_indices:
-				var neighbor_slot = slots[neighbor_index]
-				if neighbor_slot.current_symbol and neighbor_slot.current_symbol.name == "Woods":
-					GameManager.total_food += 1
+
+	# 1. Base Production
+	for slot in slots:
+		if slot.current_symbol:
+			GameManager.current_turn_food_production += slot.current_symbol.base_production.get("food", 0)
+
+	# 2. Synergy / Effect Production
+	EffectEngine.process_turn_effects(self, slots)
+
+	GameManager.total_food += GameManager.current_turn_food_production
+
+
+func get_neighbor_slots(slot_index: int) -> Array:
+	var neighbors = []
+	var slots = game_board.get_children()
+	var x = slot_index % BOARD_WIDTH
+	var y = slot_index / BOARD_WIDTH
+
+	var directions = [
+		Vector2i(-1, -1), Vector2i(0, -1), Vector2i(1, -1),
+		Vector2i(-1, 0),                 Vector2i(1, 0),
+		Vector2i(-1, 1), Vector2i(0, 1), Vector2i(1, 1)
+	]
+
+	for dir in directions:
+		var neighbor_pos = Vector2i(x, y) + dir
+		if neighbor_pos.x >= 0 and neighbor_pos.x < BOARD_WIDTH and \
+		   neighbor_pos.y >= 0 and neighbor_pos.y < BOARD_HEIGHT:
+			var neighbor_index = neighbor_pos.y * BOARD_WIDTH + neighbor_pos.x
+			neighbors.append(slots[neighbor_index])
+
+	return neighbors
 
 func _on_ui_spin_requested():
 	GameManager.turn += 1
 	clear_board()
 	place_symbols(GameManager.player_owned_symbols)
-	calculate_food_production()
+	calculate_production()

@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="SymbolData" load_steps=3 format=3 uid="uid://ci1sudpcmooth"]
+[gd_resource type="Resource" script_class="SymbolData" load_steps=5 format=3 uid="uid://ci1sudpcmooth"]
 
 [ext_resource type="Script" uid="uid://8dmoodsiqbxe" path="res://SymbolData.gd" id="1_symbol_data"]
 [ext_resource type="Texture2D" uid="uid://cstxu2f8tq4w2" path="res://resources/symbols/sprites/009.png" id="2_g5cj1"]
+[ext_resource type="Script" uid="uid://d2ore4yny5tcs" path="res://Effect.gd" id="3_effect"]
+[ext_resource type="Resource" uid="uid://d2ore4yny5tcs" path="res://resources/effects/wild_berries_synergy.tres" id="3_wild_berries_effect"]
 
 [resource]
 script = ExtResource("1_symbol_data")
@@ -11,3 +13,7 @@ level = 1
 types = 2
 texture = ExtResource("2_g5cj1")
 description = "Produce 1 food. Produce 1 food when nearby Woods."
+base_production = {
+"food": 1
+}
+effects = Array[ExtResource("3_effect")]([ExtResource("3_wild_berries_effect")])
